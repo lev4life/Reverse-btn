@@ -16,13 +16,9 @@
 import WordItem from '@/components/WordItem.vue'
 export default {
   components: { WordItem },
-    props: {
-        reverts: {
-            type: Array,
-            required: true
-        }
-    }
-
+    props: ['reverts']
+    
+    
 }
 </script>
 

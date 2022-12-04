@@ -1,9 +1,9 @@
 <template>
   <div class="revert">
     <div>
-      <div class="result" v-if="(reverse(revert.revertWord) !== '')">Элемент: {{ reverse(revert.revertWord) }}</div>
+      <div class="result">Элемент: {{ reverse(revert.revertWord) }}</div>
       <div class="revert__btns">
-        <my-button @click="$emit('remove', revert)" v-if="(reverse(revert.revertWord) !== '')">Удалить</my-button>
+        <my-button @click="$emit('remove', revert)" >Удалить</my-button>
       </div>
     </div>
   </div>

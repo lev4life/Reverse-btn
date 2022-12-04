@@ -1,45 +1,39 @@
 <template>
   <form @submit.prevent>
-      <h1 class="title">Текст задом наперед!</h1>
-      <my-input
-        v-model:value="revert.revertWord"
-        type="text"
-        placeholder="Введите текст..."
-      />
-      <my-button class="button"
-
-      @click="createRev"
-    
-
-      >Обратить!</my-button>
-      
-    </form>
-    
+    <h1 class="title">Текст задом наперед!</h1>
+    <my-input
+      v-model:value="revert.revertWord"
+      type="text"
+      placeholder="Введите текст..."
+    />
+    <my-button class="button" @click="createRev">Обратить!</my-button>
+  </form>
 </template>
 
 <script>
-
 export default {
-    
-data() {
+  data() {
     return {
-        revert: {
-            revertWord: '',
-
-
-        }
-    }
-},
-methods: {
+      revert: {
+        revertWord: "",
+        id: null,
+      },
+    };
+  },
+  methods: {
     createRev() {
-        this.revert.id = Date.now();
-        this.$emit('create', this.revert)
-        this.revert = {
-            revertWord: '',
-        }
+      if(this.revert.revertWord.length === 0){
+        return
+      }
+      this.revert.id = Date.now();
+      this.$emit("create", this.revert);
+      this.revert = {
+        revertWord: "",
+        id: null,
+      };
     },
-}
-}
+  },
+};
 </script>
 
 <style scoped>
@@ -48,5 +42,4 @@ methods: {
   margin-top: 200px;
   color: slategrey;
 }
-
 </style>
