@@ -18,10 +18,15 @@ name: 'my-button'
   border-radius: 5px;
   color: slategrey;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .button:hover {
   background-color: rgb(232, 105, 36);
+}
+
+.button:active{
+  filter: brightness(70%);
 }
 </style>
 
